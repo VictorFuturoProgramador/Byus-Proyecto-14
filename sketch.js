@@ -20,12 +20,12 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
-  //creating background
+  //crear fondo
   scene = createSprite(0,0,400,400);
   scene.addImage(backgroundImage);
   scene.scale = 2.5
   
-  // creating bow to shoot arrow
+  //crear arco para disparar las flechas
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
@@ -35,23 +35,23 @@ function setup() {
 
 function draw() {
  background(0);
-  // moving ground
+  // mover el suelo
     scene.velocityX = -3 
 
     if (scene.x < 0){
       scene.x = scene.width/2;
     }
   
-  //moving bow
+  //mover arco
   bow.y = World.mouseY
   
-   // release arrow when space key is pressed
+   //liberar las flechas al presionar la barra espaciadora 
   if (keyDown("space")) {
     createArrow();
     
   }
    
-  //Uncomment correct option to get random number from 1 to 4 
+  //Descomenta la opción correcta para obtener un número aleatorio entre 1 y 4 
    // select_balloon = Math.round(random(1,4));
    // select_balloon = random(1,4);
    // select_balloon = Math.round(random());
@@ -59,7 +59,7 @@ function draw() {
   
    if (World.frameCount % 100 == 0) {
 
-    //uncomment the correct switch statement
+    //Descomenta la sentencia switch correcta
 
             // switch(select_balloon ){
             // case 1: redBalloon();
@@ -101,7 +101,7 @@ function draw() {
 }
 
 
-// Creating  arrows for bow
+//Crear flechas para el arco
  function createArrow() {
   var arrow= createSprite(100, 100, 60, 10);
   arrow.addImage(arrowImage);
